@@ -1,0 +1,14 @@
+--- system-auth	2018-09-10 18:12:01.571000000 +0000
++++ patched-system-auth	2018-09-10 18:15:01.924000000 +0000
+@@ -4,8 +4,9 @@
+ auth     optional      pam_faildelay.so
+ auth     required      pam_env.so
+ auth     required      pam_faillock.so preauth silent deny=5 even_deny_root audit unlock_time=900 root_unlock_time=60 fail_interval=900
+-auth     sufficient    pam_sss.so forward_pass
+-auth     sufficient    pam_unix.so try_first_pass
++auth     [success=1 default=ignore]    pam_sss.so forward_pass
++auth     required    pam_unix.so try_first_pass
++auth     sufficient    pam_oath.so usersfile=/etc/liboath/users.oath window=1
+ auth     requisite     pam_succeed_if.so uid >= 500 quiet
+ auth     required      pam_deny.so
+ 
