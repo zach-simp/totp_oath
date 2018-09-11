@@ -7,8 +7,8 @@
 -auth     sufficient    pam_sss.so forward_pass
 -auth     sufficient    pam_unix.so try_first_pass
 +auth     [success=1 default=ignore]    pam_sss.so forward_pass
-+auth     requisite    pam_unix.so try_first_pass
-+auth     requisite    pam_oath.so usersfile=/etc/liboath/users.oath window=1
++auth     required    pam_unix.so try_first_pass
++auth     sufficient    pam_oath.so usersfile=/etc/liboath/users.oath window=1
  auth     requisite     pam_succeed_if.so uid >= 500 quiet
  auth     required      pam_deny.so
  
