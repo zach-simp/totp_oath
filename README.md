@@ -2,18 +2,21 @@
 Running configure on a CentOS 7 client will download, install and configure the
 pam_oath module to add totp support to pam for all local signins, as well as sshd. 
 
-*The installation defaults to a key of 000001, but this should be changed immediately.*
+_The installation defaults to a key of 000001, but this should be changed
+immediately._
 
 The config file where this
 keys are located is `/etc/liboath/users.oath`.
 More information on the format of this file can be found in the `Files` section
 of the README.
 
-Note: This installation script must be run as root!
+*Note: This installation script must be run as root!*
 
 ## usage
-1) `chmod 755 configure.sh`
-2) `sudo ./configure.sh [-u, --yumupdate]`
+1) `git clone https://github.com/zach-simp/totp_oath.git`
+2) `cd totp_oath`
+3) `chmod 755 configure.sh`
+4) `sudo ./configure.sh [-u, --yumupdate]`
 
 ## Files
 Configuration files are located in `/etc/liboath/`
