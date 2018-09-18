@@ -1,7 +1,10 @@
 # totp_oath
 Running configure on a CentOS 7 client will download, install and configure the
-pam_oath module to add totp support to pam for all local signins, as well as sshd. The installation defaults to a key
-of 000001, but this should be changed immediately. The config file where this
+pam_oath module to add totp support to pam for all local signins, as well as sshd. 
+
+*The installation defaults to a key of 000001, but this should be changed immediately.*
+
+The config file where this
 keys are located is `/etc/liboath/users.oath`.
 More information on the format of this file can be found in the `Files` section
 of the README.
@@ -27,7 +30,7 @@ and keys.
 `HOTP` sets the user on that line to HOTP, which is supported by pam_oath, but
 not configured by default.
 
-`HOTP/T30/6 _<user>_ - _<key>_` is the required line format for the
+`HOTP/T30/6 <user> - <key>` is the required line format for the
 configuration file. The program is whitespace delimited, so tabs or spaces will
 both work. Last code, timestamp and reformat are done by the pam_oath.so module
 at every successful TOTP entry. This write is also the reason why the
