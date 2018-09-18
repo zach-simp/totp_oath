@@ -21,6 +21,7 @@ installation errors occur.
 from totp sign-in. File is empty by default.
 3) `users.oath` - List of users, one per line, and their totp or hotp settings
 and keys. 
+
 `HOTP/T30/6` sets the user on that line to TOTP with 30 second cycles and 6 digit codes.
 
 `HOTP` sets the user on that line to HOTP, which is supported by pam_oath, but
